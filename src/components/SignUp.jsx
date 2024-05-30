@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import * as userApi from '../utilities/api'
 
 const SignUp = () => {
 
@@ -8,7 +9,7 @@ const SignUp = () => {
     email: '',
     password: '',
     phoneNumber: '',
-    role: 'Tutor',
+    role: 'tutor',
   })
 
   function handleChange(e) {
@@ -22,9 +23,13 @@ const SignUp = () => {
     }
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    console.log(userInput)
+    try {
+        const user = await userApi.signUp(userInput)
+    } catch(error){
+        console.log(error)
+    }
   }
   
   return (
@@ -51,8 +56,8 @@ const SignUp = () => {
       <label>
         You are a :
         <select name='role' onChange={handleChange}>
-          <option>Tutor</option>
-          <option>Parent</option>
+          <option>tutor</option>
+          <option>parent</option>
         </select>
       </label>
       <button>Sign Up</button>

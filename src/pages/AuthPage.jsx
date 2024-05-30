@@ -6,6 +6,7 @@ const AuthPage = () => {
   return (
     <div>
       <Login/>
+      <hr/>
       <SignUp/>
     </div>
   )

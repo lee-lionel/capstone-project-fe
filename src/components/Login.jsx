@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as userApi from '../utilities/api'
 
 const Login = () => {
     const [userInput, setUserInput] = useState({
@@ -10,9 +11,13 @@ const Login = () => {
         setUserInput({...userInput, [e.target.name]: e.target.value})
     }
 
-    function handleSubmit (e) {
+    async function handleSubmit (e) {
         e.preventDefault()
-        console.log(userInput)
+        try {
+            const user = await userApi.login(userInput)
+        } catch(error){
+            console.log(error)
+        }
     }
   return (
     <form onSubmit={handleSubmit}>

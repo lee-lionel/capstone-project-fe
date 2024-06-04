@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ParentProfile = () => {
   return (
@@ -9,7 +10,10 @@ const ParentProfile = () => {
       <br/>
       change password option:
       <br/>
-      <button>create post</button>
+     <Link to='/create-post'>
+         <button>create post</button>
+         </Link>
+      
     </div>
   )
 }

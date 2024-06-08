@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { subjects } from "../utilities/subject";
 
 const CreatePost = () => {
   const [userInput, setUserInput] = useState({
@@ -7,21 +8,6 @@ const CreatePost = () => {
     level: "Pri 1",
     location: "North",
   });
-
-  const subjects = [
-    "English",
-    "Mathematics",
-    "Chinese",
-    "Malay",
-    "Tamil",
-    "Science",
-    "Principle of Accounts",
-    "Chemistry",
-    "Biology",
-    "Physics",
-    "History",
-    "Geography",
-  ];
 
   const handleSubjectChange = (subject) => {
     if (userInput.subjects.includes(subject)) {

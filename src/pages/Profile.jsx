@@ -13,8 +13,6 @@ const Profile = () => {
         <hr/>
         if parent
         <ParentProfile/>
-      <button>Edit</button>
-      <button>Delete Account</button>
     </div>
   )
 }

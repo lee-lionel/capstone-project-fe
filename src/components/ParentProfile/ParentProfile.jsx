@@ -7,13 +7,11 @@ const ParentProfile = () => {
       name:
       <br/>
       email:
-      <br/>
-      change password option:
-      <br/>
+    <br/>
      <Link to='/create-post'>
-         <button>create post</button>
+         <button>Create Post</button>
          </Link>
-      
+  
     </div>
   )
 }

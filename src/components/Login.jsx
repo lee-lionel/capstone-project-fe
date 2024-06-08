@@ -3,7 +3,7 @@ import * as userApi from '../utilities/api'
 
 const Login = () => {
     const [userInput, setUserInput] = useState({
-        email: '',
+        input: '',
         password: '',
     })
 
@@ -22,8 +22,8 @@ const Login = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Email :
-        <input name='email' type="email" onChange={handleChange}></input>
+        Email/Phone Number :
+        <input name='input' type="text" onChange={handleChange}></input>
       </label>
       <label>
         Password :

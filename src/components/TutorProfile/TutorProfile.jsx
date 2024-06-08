@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const TutorProfile = () => {
     //fetch 
@@ -8,15 +9,15 @@ const TutorProfile = () => {
       <br/>
       email:
       <br/>
-      change password option:
-      <br/>
       experience:
       <br/>
       subjects taught: 
       <br/>
+      levels taught:
+      <br/>
       preferred location:
       <br/>
-      <button> edit info</button>
+     <Link to='/edit-profile'><button> edit info</button></Link> 
     </div>
   )
 }

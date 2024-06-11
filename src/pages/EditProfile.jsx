@@ -50,12 +50,19 @@ const EditProfile = () => {
         }
       };
 
+      function handleSubmit(e) {
+        e.preventDefault()
+        console.log(updatedProfile)
+      }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h1>Edit Tutor Fields</h1>
       <label>
         Experience : 
         <input
+        onChange={(e)=>setUpdatedProfile({...updatedProfile, experience: e.target.value})}
+        value={updatedProfile.experience}
         type='number'
         min={0}
         max={20}
@@ -96,7 +103,10 @@ const EditProfile = () => {
         ))}
         <label>
             Preferred Location : 
-            <select>
+            <select
+            value={updatedProfile.location}
+            onChange={(e)=>setUpdatedProfile({...updatedProfile, location: e.target.value})}
+            >
                 <option>North</option>
                 <option>North-East</option>
                 <option>Central</option>

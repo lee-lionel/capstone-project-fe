@@ -6,6 +6,7 @@ import EditProfile from './pages/EditProfile';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SearchPage from './pages/SearchPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/create-post' element={<CreatePost/>} />
           <Route path='/edit-profile' element={<EditProfile/>} />
+          <Route path='/view' element={<SearchPage/>} />
         </Routes>
       </Router>
     </div>

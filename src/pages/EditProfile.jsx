@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 //import { useParams } from 'react-router-dom'
 import { subjects } from "../utilities/subject";
+import { myDetails, updateProfile } from '../utilities/api';
 
+const id = '6656d11db68e0ec6253e2b0a'
 const EditProfile = () => {
     const levels = [
         "Pri 1",
@@ -20,7 +22,27 @@ const EditProfile = () => {
         subjects:[],
         levels: [],
         location: 'North-East',
+        showProfile: false
     })
+
+    useEffect(() => {
+        const fetchMe = async () => {
+          try {
+            const response = await myDetails(id);
+            setUpdatedProfile({
+              experience: response.experience,
+              subjects: response.subjects,
+              levels: response.levels,
+              location: response.location,
+              showProfile: response.showProfile,
+            });
+          } catch (error) {
+            console.error(error);
+          }
+        };
+        fetchMe();
+        return () => {};
+      }, [id]);
 
     const handleSubjectChange = (subject) => {
         if (updatedProfile.subjects.includes(subject)) {
@@ -50,8 +72,14 @@ const EditProfile = () => {
         }
       };
 
-      function handleSubmit(e) {
+      async function handleSubmit(e) {
         e.preventDefault()
+        try {
+            await updateProfile(updatedProfile, id)
+            alert('Success!')
+        } catch(error) {
+            console.log(error)
+        }
         console.log(updatedProfile)
       }
 
@@ -113,6 +141,17 @@ const EditProfile = () => {
                 <option>East</option>
                 <option>West</option>
             </select>
+        </label>
+        <label>
+            Available to teach
+            <input
+            type='checkbox'
+            checked={updatedProfile.showProfile}
+            onChange={(e)=>{
+                updatedProfile.showProfile = e.target.checked;
+                setUpdatedProfile({...updatedProfile });
+            }}
+            />
         </label>
         <button>Save</button>
     </form>

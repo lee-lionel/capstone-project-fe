@@ -11,3 +11,23 @@ export function signUp(userInput) {
 export function login(userInput) {
     return sendRequest(`${BASE_URL}/users/sign-in`,'POST', userInput)
 }
+
+export function listTutors() {
+    return sendRequest(`${BASE_URL}/users/list-users`)
+}
+
+export function myDetails(id) {
+    return sendRequest(`${BASE_URL}/users/${id}`)
+}
+
+export function updateProfile(userInput,id) {
+    return sendRequest(`${BASE_URL}/users/update/${id}`,'PUT',userInput)
+}
+
+export function listPosts() {
+    return sendRequest(`${BASE_URL}/posts`)
+}
+
+export function createPost(userInput) {
+    return sendRequest(`${BASE_URL}/posts/create`, 'POST', userInput)
+}

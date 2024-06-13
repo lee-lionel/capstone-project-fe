@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { subjects } from "../utilities/subject";
+import { createPost } from "../utilities/api";
 
 const CreatePost = () => {
+  //createdBy is the userId
   const [userInput, setUserInput] = useState({
+    createdBy: "tester",
     title: "",
     subjects: [],
     level: "Pri 1",
@@ -23,9 +26,23 @@ const CreatePost = () => {
     }
   };
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    console.log(userInput)
+    try {
+      await createPost(userInput)
+      alert('Post created!')
+      setUserInput({
+        createdBy: "tester",
+        title: "",
+        subjects: [],
+        level: "Pri 1",
+        location: "North",
+      })
+      
+    }
+    catch(error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -33,6 +50,7 @@ const CreatePost = () => {
       <label>
         Title :{" "}
         <input
+        value={userInput.title}
           onChange={(e) =>
             setUserInput({ ...userInput, title: e.target.value })
           }

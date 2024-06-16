@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
+import ProfileCard from "./ProfileCard";
 
 const SearchPage = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [displaySearch, setDisplaySearch] = useState(props.showClient);
+  const [displaySearch, setDisplaySearch] = useState([]);
+
+  useEffect(() => {
+        setDisplaySearch(props.showClient);
+     }, [props.showClient]);
+  
 
   function handleSearch(e) {
     const searchTerm = e.target.value.toLowerCase();
@@ -30,15 +36,10 @@ const SearchPage = (props) => {
       />
 
       {displaySearch.map((item, index) => {
-        if (props.type === "tutor") {
+        if (props.type === "parent") {
           return (
             <div key={index}>
-              <p>Name: {item.name}</p>
-              <p>Email: {item.email}</p>
-              <p>Experience: {item.experience}</p>
-              <p>Subjects: {item.subjects.join(", ")}</p>
-              <p>Levels: {item.levels.join(", ")}</p>
-              <p>Location: {item.location}</p>
+              <ProfileCard profile={item} role={item.role}/>
               <div>
                 {item.feedback.map((feedback, index) => (
                   <div key={index}>
@@ -50,7 +51,7 @@ const SearchPage = (props) => {
               </div>
             </div>
           );
-        } else if (props.type === "parent") {
+        } else if (props.type === "tutor") {
           return (
             <div key={index}>
               <p>Title: {item.title}</p>

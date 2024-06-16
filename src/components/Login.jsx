@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as userApi from '../utilities/api'
+import * as userApi from '../utilities/users-service'
 
 const Login = () => {
     const [userInput, setUserInput] = useState({
@@ -15,7 +15,9 @@ const Login = () => {
         e.preventDefault()
         try {
             const user = await userApi.login(userInput)
+            console.log(user)
         } catch(error){
+          alert(error)
             console.log(error)
         }
     }

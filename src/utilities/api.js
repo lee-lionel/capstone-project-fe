@@ -13,11 +13,11 @@ export function login(userInput) {
 }
 
 export function listTutors() {
-    return sendRequest(`${BASE_URL}/users/list-users`)
+    return sendRequest(`${BASE_URL}/users/list-tutors`)
 }
 
 export function myDetails(id) {
-    return sendRequest(`${BASE_URL}/users/${id}`)
+    return sendRequest(`${BASE_URL}/users/getMe/${id}`)
 }
 
 export function updateProfile(userInput,id) {

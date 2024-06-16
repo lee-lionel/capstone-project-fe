@@ -27,7 +27,9 @@ const SignUp = () => {
     e.preventDefault()
     try {
         const user = await userApi.signUp(userInput)
+        console.log(user)
     } catch(error){
+      alert(error)
         console.log(error)
     }
   }

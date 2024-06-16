@@ -5,7 +5,7 @@ import { listPosts, listTutors } from '../utilities/api';
 
 const View = (props) => {
   const [showClient, setShowClient] = useState([]);
-  const [role, setRole] = useState('');
+  const [role, setRole] = useState('parent');
 
   useEffect(() => {
     const storedRole = localStorage.getItem('role');

@@ -1,6 +1,10 @@
 import React from 'react'
+import { getUser } from '../utilities/users-service'
 
 const Home = () => {
+    //test getUser
+    const testid = getUser()
+    console.log(testid)
   return (
     <div>
       <h1>Tutors Connect : Connecting Parents with Prospective Tutors</h1>

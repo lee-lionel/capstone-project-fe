@@ -1,0 +1,29 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .login-signup {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+  }
+  
+  .toggle-text {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .toggle-text:hover {
+    color: #007bff; 
+  }
+  
+  

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import * as userApi from '../utilities/api'
+import * as userApi from '../../utilities/api'
+
 
 const SignUp = (props) => {
   const {setUser} = props
@@ -36,16 +37,25 @@ const SignUp = (props) => {
   }
   
   return (
-    <form onSubmit={handleSubmit}>
+    
+    <form className='signup-form' onSubmit={handleSubmit}>
+      <h2>Tutors Connect</h2>
+      <div className="input-group">
       <label>
         Name :<input name='name' type="text" onChange={handleChange}></input>
       </label>
+      </div>
+      <div className="input-group">
       <label>
         Email :<input name='email' type="email" onChange={handleChange}></input>
       </label>
+      </div>
+      <div className="input-group">
       <label>
         Password :<input name='password' type="password" onChange={handleChange}></input>
       </label>
+      </div>
+      <div className="input-group">
       <label>
         Phone No : +65
         <input
@@ -56,6 +66,8 @@ const SignUp = (props) => {
           onChange={handleChange}
         ></input>
       </label>
+      </div>
+      <div className="input-group">
       <label>
         You are a :
         <select name='role' onChange={handleChange}>
@@ -63,6 +75,7 @@ const SignUp = (props) => {
           <option>parent</option>
         </select>
       </label>
+      </div>
       <button>Sign Up</button>
     </form>
   );

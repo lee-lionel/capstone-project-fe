@@ -1,5 +1,6 @@
 /* Navbar.css */
 
+/* Base Styles */
 .navbar {
     width: 100%;
     display: flex;
@@ -8,6 +9,10 @@
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
   }
   
   .navbar-container {
@@ -18,22 +23,26 @@
   }
   
   .navbar-links {
+    margin-left: auto;
     display: flex;
     gap: 20px;
+    height: 30px; 
+    align-items: center;
   }
   
   .hyperlink {
     color: #fff;
     text-decoration: none;
-        margin: 50px;
-   
-    
+    margin-left: auto; /* Move the text to the right */
+    cursor: pointer;
   }
   
   .hamburger-menu {
     display: none;
     cursor: pointer;
     font-size: 24px;
+    color: #fff;
+    margin-left:auto
   }
   
   /* Mobile menu */
@@ -45,15 +54,22 @@
     background-color: #333;
     padding: 10px 20px;
     position: absolute;
-    top: 60px;
-    left: 0;
+    top: 50px;
+    left: unset;
     right: 0;
-    z-index: 1000;
+    width: 14%;
+    z-index: 999;
     background-color: rgba(51, 51, 51, 0.9);
   }
   
   .mobile-menu.open {
     display: flex;
+  }
+  .hyperlink-m {
+    color: #fff;
+    text-decoration: none;
+    justify-content: center;
+    cursor: pointer;
   }
   
   /* Media query for mobile screens */
@@ -65,5 +81,4 @@
       display: block;
     }
   }
-
   

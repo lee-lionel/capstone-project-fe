@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import AuthPage from "./pages/AuthPage";
 import CreatePost from "./pages/CreatePost";
 import EditProfile from "./pages/EditProfile";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import View from "./pages/View";

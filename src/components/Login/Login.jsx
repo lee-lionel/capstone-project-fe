@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import * as userApi from '../utilities/users-service'
+import * as userApi from '../../utilities/users-service'
+import './Login.css'
 
 const Login = (props) => {
     const {setUser} = props
@@ -23,15 +24,20 @@ const Login = (props) => {
         }
     }
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='login-form' onSubmit={handleSubmit}>
+      <h2>Tutors Connect</h2>
+      <div className="input-group">
       <label>
         Email/Phone Number :
         <input name='input' type="text" onChange={handleChange}></input>
       </label>
+      </div>
+      <div className="input-group">
       <label>
         Password :
         <input name='password' type="password" onChange={handleChange}></input>
       </label>
+      </div>
       <button>Login</button>
     </form>
   );

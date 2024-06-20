@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       {user ? (
         <Router>
-          <Navbar />
+          <Navbar setUser={setUser}/>
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/profile" element={<Profile />} />

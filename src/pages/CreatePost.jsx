@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { subjects } from "../utilities/subject";
 import { createPost } from "../utilities/api";
+import { getUser } from "../utilities/users-service";
 
 const CreatePost = () => {
-  //createdBy is the userId
+  const user = {
+    id: getUser()._id,
+    name: getUser().name,
+  }
+
   const [userInput, setUserInput] = useState({
-    createdBy: "tester",
+    createdBy: user,
     title: "",
     subjects: [],
     level: "Pri 1",
@@ -32,7 +37,7 @@ const CreatePost = () => {
       await createPost(userInput)
       alert('Post created!')
       setUserInput({
-        createdBy: "tester",
+        createdBy: user,
         title: "",
         subjects: [],
         level: "Pri 1",

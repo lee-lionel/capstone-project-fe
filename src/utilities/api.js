@@ -31,3 +31,15 @@ export function listPosts() {
 export function createPost(userInput) {
     return sendRequest(`${BASE_URL}/posts/create`, 'POST', userInput)
 }
+
+export function tutorApplication(postId, applicantId) {
+    return sendRequest(`${BASE_URL}/posts/tutor-apply/${postId}`, 'PUT', applicantId)
+}
+
+export function getMyPosts(userId) {
+    return sendRequest(`${BASE_URL}/posts/my-posts/${userId}`)
+}
+
+export function deletePost(postId) {
+    return sendRequest(`${BASE_URL}/posts/delete/${postId}`,'DELETE')
+}

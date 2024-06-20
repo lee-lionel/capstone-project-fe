@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-//import { useParams } from 'react-router-dom'
 import { subjects } from "../utilities/subject";
 import { myDetails, updateProfile } from '../utilities/api';
+import { getUser } from '../utilities/users-service';
 
-const id = '6656d11db68e0ec6253e2b0a'
+
 const EditProfile = () => {
+    const id = getUser()._id
     const levels = [
         "Pri 1",
         "Pri 2",
@@ -30,11 +31,11 @@ const EditProfile = () => {
           try {
             const response = await myDetails(id);
             setUpdatedProfile({
-              experience: response.experience,
-              subjects: response.subjects,
-              levels: response.levels,
-              location: response.location,
-              showProfile: response.showProfile,
+              experience: response.experience || '',
+              subjects: response.subjects || [],
+              levels: response.levels || [],
+              location: response.location || 'North-East',
+              showProfile: response.showProfile || false,
             });
           } catch (error) {
             console.error(error);

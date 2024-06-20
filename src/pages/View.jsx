@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import localStorage from 'localStorage';
-import SearchPage from '../components/SearchPage';
+import SearchPage from '../components/SearchPage/SearchPage';
 import { listPosts, listTutors } from '../utilities/api';
 
-const View = (props) => {
+const View = () => {
   const [showClient, setShowClient] = useState([]);
-  const [role, setRole] = useState('parent');
+  const role = localStorage.getItem('role');
 
-  useEffect(() => {
-    const storedRole = localStorage.getItem('role');
-    if (storedRole) {
-      setRole(storedRole);
-    }
-  }, []);
+
 
   async function getArray() {
     try {

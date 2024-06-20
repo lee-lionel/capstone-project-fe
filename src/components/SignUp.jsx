@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import * as userApi from '../utilities/api'
 
-const SignUp = () => {
+const SignUp = (props) => {
+  const {setUser} = props
 
   const [userInput, setUserInput] = useState({
     name: '',
@@ -27,7 +28,7 @@ const SignUp = () => {
     e.preventDefault()
     try {
         const user = await userApi.signUp(userInput)
-        console.log(user)
+        setUser(user)
     } catch(error){
       alert(error)
         console.log(error)

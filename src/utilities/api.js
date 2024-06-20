@@ -2,7 +2,8 @@
 
 import sendRequest from "./send-request";
 
-const BASE_URL = 'http://localhost:3005/api'
+const BASE_URL = 'https://capstone-project-be-n4tu.onrender.com/api'
+//'http://localhost:3005/api'
 
 export function signUp(userInput) {
     return sendRequest(`${BASE_URL}/users`, 'POST', userInput)

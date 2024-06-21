@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import * as userApi from '../../utilities/api'
+import * as userApi from '../../utilities/users-service'
 
 
 const SignUp = (props) => {

@@ -1,0 +1,77 @@
+.post-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .post-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .post-info {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  
+  .applicants-section {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .applicant {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .applicant-name {
+     font-size: 1em;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    text-align: center;
+    height: 100%; 
+  }
+  
+  .applicant-name:hover {
+    color: #0056b3;
+  }
+  
+  .applicant-name:active {
+    color: #003d80;
+  }
+
+  .profile-card-2 {
+    position: absolute;
+    top: 30%; /* Adjust this value as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure it appears above other content */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  

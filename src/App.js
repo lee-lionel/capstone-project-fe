@@ -1,10 +1,10 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import AuthPage from "./pages/AuthPage";
-import CreatePost from "./pages/CreatePost";
-import EditProfile from "./pages/EditProfile";
+import AuthPage from "./pages/AuthPage/AuthPage";
+import CreatePost from "./pages/CreatePost/CreatePost";
+import EditProfile from "./pages/EditProfile/EditProfile";
 import Home from "./pages/Home/Home";
-import Profile from "./pages/Profile";
+import Profile from "./pages/Profile/Profile";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import View from "./pages/View";
 import { getUser } from "./utilities/users-service";

@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  .profile-card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .profile-name,
+  .profile-email {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .tutor-info {
+    margin-top: 20px;
+  }
+  
+  .profile-experience,
+  .profile-section-title,
+  .profile-location {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  
+  .profile-subjects,
+  .profile-levels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .profile-subject,
+  .profile-level {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    text-align: center;
+    height: 100%; /* Ensure it takes the full height of its container */
+  }
+  
+  /* Optional: Ensure the parent containers have sufficient height */
+  .profile-subjects, .profile-levels {
+    min-height: 40px; /* Adjust as needed */
+  }
+  
+  /* Reset potential conflicting styles */
+  html, body {
+    height: 100%;
+  }
+  

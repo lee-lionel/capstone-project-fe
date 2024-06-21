@@ -38,7 +38,7 @@ const Login = (props) => {
         <input name='password' type="password" onChange={handleChange}></input>
       </label>
       </div>
-      <button>Login</button>
+      <button className="auth-page-button">Login</button>
     </form>
   );
 };

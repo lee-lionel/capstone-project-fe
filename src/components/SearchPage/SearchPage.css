@@ -1,4 +1,76 @@
+/* Container for the entire search page */
+.search-page-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styling the search input */
+.search-input {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the profile and post cards */
+.profile-card,
+.post-card {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styling for applied posts */
 .applied-post {
-    background-color: lightgreen;
+  background-color: lightgreen;
+  border-color: #97c997;
+  height: 100%;
+  width: 100%;
+}
+
+/* Styling for the apply button */
+.apply-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.apply-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .profile-card,
+  .post-card {
+      max-width: 100%;
   }
   
+  .search-input {
+      width: 100%;
+      max-width: 100%;
+  }
+}

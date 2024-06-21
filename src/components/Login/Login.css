@@ -47,7 +47,7 @@
   border-radius: 4px;
 }
 
-button {
+.auth-page-button {
   width: 100%;
   padding: 10px;
   background-color: #007bff;
@@ -58,7 +58,7 @@ button {
   font-size: 16px;
 }
 
-button:hover {
+.auth-page-button:hover {
   background-color: #0056b3;
 }
 

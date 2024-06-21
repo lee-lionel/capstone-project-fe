@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { deletePost, getMyPosts, myDetails } from '../utilities/api';
-import ProfileCard from '../components/ProfileCard';
-import { getUser } from '../utilities/users-service';
-import PostCard from '../components/PostCard';
+import { deletePost, getMyPosts, myDetails } from '../../utilities/api';
+import ProfileCard from '../../components/ProfileCard/ProfileCard';
+import { getUser } from '../../utilities/users-service';
+import PostCard from '../../components/PostCard/PostCard';
+import './Profile.css'
 
 const Profile = () => {
   const id = getUser()._id;
@@ -57,13 +58,6 @@ const Profile = () => {
     }
   }
 
-  async function handleEdit(postId){
-    try {
-        console.log(postId)
-    } catch (error) {
-        
-    }
-  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -74,23 +68,29 @@ const Profile = () => {
   }
 
   return (
-    <div>
+    <div className="content-container">
+      <h1>My Profile: </h1>
+      <div className="profile-card">
       <ProfileCard profile={me} role={role} />
       {role === 'tutor' ? (
-        <Link to='/edit-profile'><button>Edit Info</button></Link>
+        <Link to='/edit-profile'><button className='edit-button'>Edit Info</button></Link>
       ) : role === 'parent' ? (
-        <Link to='/create-post'><button>Create Post</button></Link>
+        <Link to='/create-post'><button className='create-button'>Create Post</button></Link>
       ) : null}
+      </div>
       <div style={{ display: role === 'parent' ? 'block' : 'none' }}>
+        <h1> My Posts: </h1>
         {myPosts.map((post) => (
-          <div key={post._id}>
+          <div className="post-card" key={post._id}>
+            <div className='post-info'>
             <PostCard post={post} role={role} />
+            </div>
             {/* <input
             type='checkbox'
             checked={post.foundTutor}
             onChange={()=>handleEdit(post._id)}
             /> */}
-            <button onClick={() => handleDelete(post._id)}>Delete</button>
+            <button className='delete-button' onClick={() => handleDelete(post._id)}>Delete</button>
           </div>
         ))}
       </div>

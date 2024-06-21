@@ -30,7 +30,10 @@ const View = () => {
   useEffect(()=>{getArray()}, [role]);
 
   return (
-    <SearchPage showClient={showClient} type={role}/>
+    <div className="content-container">
+          <SearchPage showClient={showClient} type={role}/>
+    </div>
+
   );
 };
 

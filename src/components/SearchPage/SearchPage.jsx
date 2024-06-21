@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import ProfileCard from "../ProfileCard";
+import ProfileCard from "../ProfileCard/ProfileCard";
 import { getUser } from "../../utilities/users-service";
 import { tutorApplication } from "../../utilities/api";
 import './SearchPage.css'
-import PostCard from "../PostCard";
+import PostCard from "../PostCard/PostCard";
 
 const SearchPage = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -47,8 +47,9 @@ const SearchPage = (props) => {
   }
 
   return (
-    <div>
+    <div className="search-page-container">
       <input
+        className="search-input"
         placeholder="for u to search"
         type="search"
         value={searchTerm}
@@ -56,20 +57,22 @@ const SearchPage = (props) => {
       />
 
       {displaySearch.map((item, index) => {
-        
-
         if (props.type === "parent") {
           return (
-            <div key={index}>
+            <div className="profile-card" key={index}>
               <ProfileCard profile={item} role={item.role}/>
             </div>
           );
         } else if (props.type === "tutor") {
           const hasApplied = item.applicants.some(applicant => applicant.id === currentUser._id);
           return (
-            <div key={index} className={hasApplied ? 'applied-post' : ''}>
-              <PostCard post={item} role={props.type}/>
-              <button onClick={()=>handleApplication(item._id)}>Apply</button>
+            <div className="post-card" key={index}>
+              <div className={hasApplied ? 'applied-post' : ''}>
+                <PostCard post={item} role={props.type}/>
+                {!hasApplied && (
+                  <button className="apply-button" onClick={() => handleApplication(item._id)}>Apply</button>
+                )}
+              </div>
             </div>
           );
         } else {

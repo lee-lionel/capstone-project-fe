@@ -76,7 +76,7 @@ const SignUp = (props) => {
         </select>
       </label>
       </div>
-      <button>Sign Up</button>
+      <button className="auth-page-button">Sign Up</button>
     </form>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import ProfileCard from './ProfileCard';
-import { myDetails } from '../utilities/api';
+import ProfileCard from '../ProfileCard/ProfileCard';
+import { myDetails } from '../../utilities/api';
+import './Stalking.css'
 
 const Stalking = (props) => {
     const {id} = props
@@ -31,8 +32,8 @@ const Stalking = (props) => {
       }
 
   return (
-    <div>
-        <button onClick={props.onClose}>close</button>
+    <div className='stalking-container'>
+        <button className='close-button' onClick={props.onClose}>x</button>
       <ProfileCard profile={target} role={target.role}/>
     </div>
   )

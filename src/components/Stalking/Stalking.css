@@ -1,0 +1,19 @@
+.stalking-container {
+    position: relative;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: -5%;
+    right: 0.1%;
+    background: transparent;
+    border: none;
+    color: #000;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    color: blue; /* Change color on hover if needed */
+  }
+  
